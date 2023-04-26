@@ -1,22 +1,23 @@
-/* Geogebra to Asymptote conversion, documentation at artofproblemsolving.com/Wiki go to User:Azjps/geogebra */
-import graph; size(4.488487423480265cm); 
-real labelscalefactor = 0.5; /* changes label-to-point distance */
-pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps); /* default pen style */ 
-pen dotstyle = black; /* point style */ 
-real xmin = -1.7719903605383729, xmax = 2.716497062941892, ymin = -1.5700850434727063, ymax = 0.6659279456082304;  /* image dimensions */
-pen zzttqq = rgb(0.6,0.2,0.); 
+import cse5; size(300); defaultpen(linewidth(0.4)+fontsize(10));
+real x=50, R=1.7, r=1.3;
+pair L0=origin, L1=dir(x), L2=2*L1, L3=3*L1, L4=4*L1;
+pair P0=bisectorpoint(L2,L4),P=L3+r*(P0-L3);
+pair Q0=bisectorpoint(L0,L2),Q=L1+R*(Q0-L1);
+path c1=CR(Q,R), c2=CR(P,r);
+pair U=OP(c1,c2), V=IP(c1,c2);
 
-draw((0.2950881433923038,0.467397565098752)--(-0.2953913078286413,-1.0394753201598927)--(1.3495157348582774,-1.00880106295361)--cycle, linewidth(2.) + zzttqq); 
- /* draw figures */
-draw((0.2950881433923038,0.467397565098752)--(-0.2953913078286413,-1.0394753201598927), linewidth(2.) + zzttqq); 
-draw((-0.2953913078286413,-1.0394753201598927)--(1.3495157348582774,-1.00880106295361), linewidth(2.) + zzttqq); 
-draw((1.3495157348582774,-1.00880106295361)--(0.2950881433923038,0.467397565098752), linewidth(2.) + zzttqq); 
- /* dots and labels */
-dot((0.2950881433923038,0.467397565098752),dotstyle); 
-label("$B$", (0.30489532379815587,0.49582634398489533), NE * labelscalefactor); 
-dot((-0.2953913078286413,-1.0394753201598927),dotstyle); 
-label("$C$", (-0.28497313344405506,-1.0131394768672706), NE * labelscalefactor); 
-dot((1.3495157348582774,-1.00880106295361),dotstyle); 
-label("$D$", (1.3611713983946732,-0.9802165862304959), NE * labelscalefactor); 
-clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle); 
- /* end of picture */
+draw(L0--L4); draw(c1^^c2^^Q--L1^^P--L3^^L2--V--L1--U, gray+0.4);
+dot("$B$",L1,dir(150));
+dot("$M$",L2,dir(150));
+dot("$A$",L3,dir(150));
+dot("$P$",P,dir(70));
+dot("$Q$",Q,dir(70));
+dot("$\mathcal{U}$",U,dir(55));
+dot("$V$",V,dir(75));
+
+MA("",U,V,L1,0.4,1,gray); MA("",U,V,L1,0.36,1,gray);
+MA("",U,L1,L2,0.4,1,gray); MA("",U,L1,L2,0.36,1,gray);
+MA("",L0,L1,Q,0.2,gray); MA("",P,L3,L4,0.2,gray);
+real d=0.11;
+dot(L1+(0,-0.11),linewidth(1.5));
+dot(L3+(d*dir(10)),linewidth(1.5));
