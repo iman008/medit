@@ -1,0 +1,27 @@
+[asy]
+size(8cm);
+unitsize(1cm);
+
+picture my_picture_1;
+picture my_picture_2;
+
+dot(my_picture_1, (0,0));
+draw(my_picture_1, polygon(5));
+label(my_picture_1,"\textbf{Figure 1}",1.25*S);
+
+dot(my_picture_2, (0,0),red);
+draw(my_picture_2, scale(1.5)*polygon(5),red);
+label(my_picture_2,"\textbf{Figure 2}",1.75*S,red);
+
+add(my_picture_1);
+add(shift(3,.5)*my_picture_2);
+[/asy]
+
+hello this is a test.
+
+[asy]
+draw((0,0)--(3,7),red);
+dot((0,0));
+dot((3,7));
+label("Produced with Asymptote "+version.VERSION,point(S),2S);
+[/asy]
