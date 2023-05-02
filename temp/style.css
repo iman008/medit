@@ -1,0 +1,165 @@
+@page {
+    size: 7in 9.25in;
+    margin: 27mm 16mm 27mm 16mm;
+}
+
+html,
+body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+}
+
+.title-section {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.title,
+.author-name,
+.author-email {
+    font-family: 'LMRoman10', sans-serif;
+}
+
+.title {
+    font-size: 2.5em;
+    margin-bottom: 0.25em;
+}
+
+.authors {
+    font-size: 1.2em;
+}
+
+.author-name {
+    font-style: italic;
+    margin-right: 0.5em;
+}
+
+.author-email {
+    color: #337ab7;
+    margin-right: 0.5em;
+}
+
+.separator {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+
+.page-break {
+    page-break-after: always;
+}
+
+/* Add page number to every page */
+.page-number {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5mm;
+}
+
+/* Add a margin at the bottom of the last page to make room for the page number */
+.last-page {
+    margin-bottom: 15mm;
+}
+
+.tcb-definition {
+    background-color: #f0fff0;
+    border-left: 3px solid darkgreen;
+    border-right: 3px solid darkgreen;
+    border-bottom: 3px solid darkgreen;
+    margin: 10px auto;
+    max-width: 800px;
+    /* Set your desired maximum width */
+    padding: 10px;
+    border-radius: 5px;
+    /* Add the border-radius property to round the corners */
+}
+
+.tcb-definition-title {
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-left: -12px;
+    margin-right: -12px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    /* Set the top corners to be rounded */
+}
+
+.tcb-definition-content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.tcb-theorem {
+    background-color: #f0feff;
+    border-left: 3px solid darkblue;
+    border-right: 3px solid darkblue;
+    border-bottom: 3px solid darkblue;
+    margin: 10px auto;
+    max-width: 800px;
+    /* Set your desired maximum width */
+    padding: 10px;
+    border-radius: 5px;
+    /* Add the border-radius property to round the corners */
+}
+
+.tcb-theorem-title {
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-left: -12px;
+    margin-right: -12px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    /* Set the top corners to be rounded */
+}
+
+.tcb-theorem-content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.perpart {
+    font-family: 'B Nazanin', sans-serif;
+    direction: rtl;
+}
+
+.engpart {
+    font-family: 'LMRoman10', sans-serif;
+    direction: ltr;
+}
+
+
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    font-family: 'LMRoman10', sans-serif;
+    margin-bottom: 2em;
+    counter-reset: section-number;
+}
+
+h2::before {
+    counter-increment: section-number;
+    content: "Section " counter(section-number) ": ";
+}
+
+
+
+h2,
+h3 {
+    margin-top: 0;
+}
