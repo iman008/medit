@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Asymptote Editor</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+        integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+                    displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+                    processEscapes: true
+                },
+                CommonHTML: { linebreaks: { automatic: true } },
+                "HTML-CSS": { linebreaks: { automatic: true } },
+                SVG: { linebreaks: { automatic: true } }
+            });
+        </script>
+</head>
+
+<body>
+    <h1>Asymptote Editor</h1>
+    <table>
+        <tr>
+            <td>
+                <h2>Input</h2>
+                <textarea id="input" rows="10" style="width: 95%;"></textarea>
+                <button onclick="compile()">Compile</button>
+            </td>
+            <td>
+                <h2>Output</h2>
+                <iframe id="output" width="640" height="480"></iframe>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function compile() {
+            // Get the text from the input textarea
+            var input_text = document.getElementById('input').value;
+
+            // Call the server to process the text and return the output HTML
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Display the output HTML in the output iframe
+                    document.getElementById('output').srcdoc = this.responseText;
+                }
+            };
+            xhr.open('POST', '/compile', true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.send('input=' + encodeURIComponent(input_text));
+        }
+    </script>
+</body>
+
+</html>

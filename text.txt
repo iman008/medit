@@ -25,3 +25,182 @@ dot((0,0));
 dot((3,7));
 label("Produced with Asymptote "+version.VERSION,point(S),2S);
 [/asy]
+<h1>salam</h1>
+
+
+[asy]import cse5; size(200); pair A=(0,0),B=(3,0),X1,X2; D(MP("A",D(A))--MP("B",D(B))); X1=MP("X_1",IP(D(CR(A,2)),D(CR(B,2)))); X2=MP("X_2",OP(CR(A,2),CR(B,2))); D(L(D(X1),D(X2)));[/asy]
+این یک تست است
+[asy]import cse5; size(200); pair A=(0,0),B=(0,3),C=(3,2); D(A);D(B);D(C); MP("A",A);MP("B",B);MP("C",C); D(A--B--C--A,black); path K=CR(A,1); D(K); pair b=IP(K,A--B); D(b); MP("B_1",b); pair c=IP(K,A--C); D(c); MP("C_1",c); path Kb=CR(b,0.7); D(Kb); path Kc=CR(c,0.7); D(Kc); pair x=IP(Kb,Kc); D(x); MP("X",x); pair y=OP(Kb,Kc); D(y); MP("Y",y); path L=L(x,y); D(L,green);[/asy]
+
+
+the vertices of $\Delta_A$ are $A,X_A,Y_A$ in clockwise order, $O_A$ and $I_A$ are the circumcenter and incenter of $\Delta_A$ resp. denote the center of mixtilinear incircle associated with $A$ and $\triangle ABC$ with $M_A$.
+
+Part a:
+[asy] /* Geogebra to Asymptote conversion, documentation at artofproblemsolving.com/Wiki go to User:Azjps/geogebra */
+import graph; size(11.15261017250625cm); 
+real labelscalefactor = 0.5; /* changes label-to-point distance */
+pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps); /* default pen style */ real xmin = -2.969383755286052, xmax = 2.606921330967073, ymin = -1.3327570324943117, ymax = 1.2588590709136789;  /* image dimensions */
+pen ffxfqq = rgb(1.,0.4980392156862745,0.); pen aqaqaq = rgb(0.6274509803921569,0.6274509803921569,0.6274509803921569); 
+pair A = (-0.41571416572998426,0.9094953174213836), B = (-0.7685233656004451,-0.6398217224556888), C = (0.7773841612562274,-0.6290261249168844), D = (-0.4431609514055461,-0.8964420623494478), F = (-0.8734272715368834,0.4869546193801183), Y_A = (-0.5307798017220215,0.404199110258385), X_A = (0.0929563757909764,0.25355563708281537), Y_C = (0.5084556827031053,-0.2822380846096524), X_C = (-0.037658663984776415,-0.6347178459062264), Y_B = (-0.5235076000956539,-0.6381106941120788), X_B = (-0.6647332497838676,-0.1840405379954196), I = (-0.17782558753640712,-0.16513016020983656), I_A = (-0.3312413970237585,0.5279024300827918), I_D = (-0.3859177308210209,-0.738669468753847), T_A = (-0.4705637733102556,-2.699486724024256), P = (-0.29103974656120624,0.3462975873537347), O_A = (-0.15708924191248164,0.5848520333499503), O_D = (-0.28011067301550296,-0.7040694377577367), M_D = (-0.02474736605260801,0.25678090244322815), M_A = (-0.12461915270633847,-0.405482138755819); 
+
+draw(A--B--C--cycle, linewidth(0.8)); 
+draw(D--(0.9994000899645995,0.0346332236263146)--F--cycle, linewidth(0.8)); 
+ /* draw figures */
+draw(circle((0.,0.), 1.), linewidth(0.8)); 
+draw(A--B, linewidth(0.4)); 
+draw(B--C, linewidth(0.4)); 
+draw(C--A, linewidth(0.4)); 
+draw(circle(I, 0.47055504530320263), linewidth(0.8)); 
+draw(D--(0.9994000899645995,0.0346332236263146), linewidth(0.4)); 
+draw((0.9994000899645995,0.0346332236263146)--F, linewidth(0.4)); 
+draw(F--D, linewidth(0.4)); 
+draw(circle(O_A, 0.41506639602874906), linewidth(0.8) + ffxfqq); 
+draw(circle(O_D, 0.2521757719833014), linewidth(0.8) + ffxfqq); 
+draw(circle(I_A, 0.16709119793511054), linewidth(0.8)); 
+draw(circle((-0.38591773082102093,-0.738669468753847), 0.10151713613544996), linewidth(0.8)); 
+draw(A--T_A, linewidth(0.4)); 
+draw(I_A--T_A, linewidth(0.4)); 
+draw(I--A, linewidth(0.4)); 
+draw(I--D, linewidth(0.4)); 
+draw(P--T_A, linewidth(0.4)); 
+draw(D--O_D, linewidth(0.4)); 
+draw((-0.09593093096570857,0.9953879929374537)--T_A, linewidth(0.4)); 
+draw(circle(M_A, 0.5757999315520576), linewidth(0.8) + linetype("4 4") + aqaqaq); 
+draw(circle(M_D, 0.7420293350279916), linewidth(0.8) + linetype("4 4") + aqaqaq); 
+draw(I--M_D, linewidth(0.4)); 
+draw(I--M_A, linewidth(0.4)); 
+draw(T_A--M_D, linewidth(0.4)); 
+ /* dots and labels */
+dot(A,linewidth(3.pt)); 
+label("$A$", (-0.389637196994329,0.9504343033705563), NE * labelscalefactor); 
+dot(B,linewidth(3.pt)); 
+label("$B$", (-0.7391625825323318,-0.5933028160889727), NE * labelscalefactor); 
+dot(C,linewidth(3.pt)); 
+label("$C$", (0.8045745369271804,-0.5860210372235976), NE * labelscalefactor); 
+dot(D,linewidth(3.pt)); 
+label("$D$", (-0.5716816686287055,-1.0229277691461058), NE * labelscalefactor); 
+dot((0.9994000899645995,0.0346332236263146),linewidth(3.pt)); 
+label("$E$", (1.030309681753807,0.07662083952553989), NE * labelscalefactor); 
+dot(F,linewidth(3.pt)); 
+label("$F$", (-0.8411074866475826,0.5280911291787984), NE * labelscalefactor); 
+dot(Y_A,linewidth(3.pt)); 
+label("$Y_A$", (-0.7464443613977069,0.30235598435216915), NE * labelscalefactor); 
+dot(X_A,linewidth(3.pt)); 
+label("$X_A$", (0.26572290088942613,0.28779242662141885), NE * labelscalefactor); 
+dot(Y_C,linewidth(3.pt)); 
+label("$Y_C$", (0.5351487189083033,-0.236495651685591), NE * labelscalefactor); 
+dot(X_C,linewidth(3.pt)); 
+label("$X_C$", (0.06183309265892452,-0.819037960915602), NE * labelscalefactor); 
+dot(Y_B,linewidth(3.pt)); 
+label("$Y_B$", (-0.7100354670708315,-0.5423303640313467), NE * labelscalefactor); 
+dot(X_B,linewidth(3.pt)); 
+label("$X_B$", (-0.637217678417081,-0.14183252643571423), NE * labelscalefactor); 
+dot(I,linewidth(3.pt)); 
+label("$I$", (-0.14933849443695216,-0.11998718983958881), NE * labelscalefactor); 
+dot((-0.29377447571447474,-0.9558747603209771),linewidth(3.pt)); 
+label("$D'$", (-0.24400161968682788,-1.088463778934482), NE * labelscalefactor); 
+dot(I_A,linewidth(3.pt)); 
+label("$I_A$", (-0.30225585060982835,0.5717818023710493), NE * labelscalefactor); 
+dot(I_D,linewidth(3.pt)); 
+label("$I_D$", (-0.4843003222442048,-0.6734023836080992), NE * labelscalefactor); 
+dot(T_A,linewidth(3.pt)); 
+label("$T_A$", (-0.6444994572824561,-2.30452084945213), NE * labelscalefactor); 
+dot(P,linewidth(3.pt)); 
+label("$P$", (-0.258565177417578,0.3897373307366708), NE * labelscalefactor); 
+dot((-0.3489907150982557,-0.6368919834056315),linewidth(3.pt)); 
+label("$S$", (-0.28041051401370315,-0.6224299315504732), NE * labelscalefactor); 
+dot(O_A,linewidth(3.pt)); 
+label("$O_A$", (-0.12749315784082696,0.6300360332940503), NE * labelscalefactor); 
+dot(O_D,linewidth(3.pt)); 
+label("$O_D$", (-0.25128339855220294,-0.658838825877349), NE * labelscalefactor); 
+dot((-0.09593093096570857,0.9953879929374537),linewidth(3.pt)); 
+label("$A'$", (-0.06923892691782652,1.037815649755058), NE * labelscalefactor); 
+dot(M_D,linewidth(3.pt)); 
+label("$M_D$", (-0.08380248464857663,0.38245555187129565), NE * labelscalefactor); 
+dot(M_A,linewidth(3.pt)); 
+label("$M_A$", (-0.061957148052451456,-0.3748494501277186), NE * labelscalefactor); 
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle); 
+ /* end of picture */[/asy]
+
+
+(1) $AD$ and $A'D'$ pass through the exsimilicenter of $(\Omega_A,\Omega_D)$:
+proof: as mentioned in [1] we have that $A'$ is the intersection of mixtilinear-incircle of $\triangle DEF$ associated with $D$. So, It implies that $(A',D')$ and $(A,D)$ are anti-homologous points wrt $(\Omega_A,\Omega_D)$. $\blacksquare$
+
+(2) $AD$ and $A'D'$ pass through the exsimilicenter of $(\omega_A,\omega_D)$:
+proof: $P=AI \cap EF$ and $S=DI \cap BC$. easy to see that:
+\[(II_A,PA)=(II_D,SD) \ \text{and} \ (IM_A,I_AA)=(IM_D,I_DD) \ (*)\]by monge's theorem $AD$ and $I_AI_D$ pass through the exsimilicenter of $(\omega_A,\omega_D)$. now (*) says that $M_DM_A$,$AD$,$I_AI_D$ and $A'D'$ pass through the same point. $\blacksquare$
+
+combining (1) and (2) the problem is solved.
+
+Part b:
+[asy] /* Geogebra to Asymptote conversion, documentation at artofproblemsolving.com/Wiki go to User:Azjps/geogebra */
+import graph; size(12cm);
+real labelscalefactor = 0.5; /* changes label-to-point distance */
+pen dps = linewidth(0.7) + fontsize(9); defaultpen(dps); /* default pen style */ real xmin = -2.5942522631264997, xmax = 5.648221774640172, ymin = -2.668654923074809, ymax = 1.1620767384440491; /* image dimensions */
+pen aqaqaq = rgb(0.6274509803921569,0.6274509803921569,0.6274509803921569); pen ffxfqq = rgb(1.,0.4980392156862745,0.);
+pair A = (-0.5587830438367267,0.8293138790111756), B = (-0.7685233656004451,-0.6398217224556888), C = (0.7773841612562274,-0.6290261249168844), D = (-0.5286229339894898,-0.8488567568561515), F = (-0.894270595608767,0.4475266492953699), Y_A = (-0.6230438174066925,0.37919637449150506), X_A = (-0.0033285406048299544,0.22307124759686084), Y_C = (0.4822594291535299,-0.30691658553182344), X_C = (-0.13039710008551353,-0.6353654699168018), Y_B = (-0.5879373983130488,-0.6385606292854171), X_B = (-0.7077158579795547,-0.21389277597988057), I = (-0.24566274768420815,-0.18309664558369676), P = (-0.4491607265496593,-0.33476716813773666), T_A = (-0.5023057016858365,-2.313201770617303);
+
+draw(A--B--C--cycle, linewidth(0.8));
+draw(D--(0.9995621960992881,-0.029587431946155873)--F--cycle, linewidth(0.8));
+/* draw figures */
+draw(circle((0.,0.), 1.), linewidth(0.8));
+draw(A--B, linewidth(0.4));
+draw(B--C, linewidth(0.4));
+draw(C--A, linewidth(0.4));
+draw(circle(I, 0.45306271638812134), linewidth(0.8));
+draw(D--(0.9995621960992881,-0.029587431946155873), linewidth(0.4));
+draw((0.9995621960992881,-0.029587431946155873)--F, linewidth(0.4));
+draw(F--D, linewidth(0.4));
+draw(circle((-0.17562989971092718,-0.40953355570007793), 0.5543952480989248), linewidth(0.8) + linetype("4 4") + aqaqaq);
+draw(circle((-0.0630361179796793,0.24659463678711727), 0.7454759990450438), linewidth(0.8) + linetype("4 4") + aqaqaq);
+draw(D--I, linewidth(1.2));
+draw(A--I, linewidth(1.2));
+draw(B--I, linewidth(1.2));
+draw((0.9995621960992881,-0.029587431946155873)--I, linewidth(1.2));
+draw(C--I, linewidth(1.2));
+draw(circle((-0.249114095863816,0.5554583360540302), 0.41339051240564556), linewidth(1.2) + ffxfqq);
+draw(circle((-0.3588146883999144,-0.6874490362690445), 0.23428037163905796), linewidth(1.2) + ffxfqq);
+draw(A--(-0.3941383007287072,-0.9190511410681597), linewidth(1.2) + red);
+draw((-0.24766276556698932,0.9688463007885786)--D, linewidth(1.2) + red);
+draw(A--T_A, linewidth(1.2) + red);
+draw((-0.24766276556698932,0.9688463007885786)--T_A, linewidth(1.2) + red);
+/* dots and labels */
+dot(A,linewidth(3.pt));
+label("$A$", (-0.5410194831093541,0.856799922230464), NE * labelscalefactor);
+dot(B,linewidth(3.pt));
+label("$B$", (-0.7478199069959731,-0.6104983234412839), NE * labelscalefactor);
+dot(C,linewidth(3.pt));
+label("$C$", (0.7982594525373212,-0.6006506842085876), NE * labelscalefactor);
+dot(D,linewidth(3.pt));
+label("$D$", (-0.6345720558199675,-0.9059275004221727), NE * labelscalefactor);
+dot((0.9995621960992881,-0.029587431946155873),linewidth(3.pt));
+label("$E$", (1.0198313352729844,5.530898588638973e-5), NE * labelscalefactor);
+dot(F,linewidth(3.pt));
+label("$F$", (-0.875839217021023,0.4776658117716567), NE * labelscalefactor);
+dot(Y_A,linewidth(3.pt));
+label("$Y_A$", (-0.7330484481469288,0.4579705333062641), NE * labelscalefactor);
+dot(X_A,linewidth(3.pt));
+label("$X_A$", (0.11384852586493933,0.24624628980329374), NE * labelscalefactor);
+dot(Y_C,linewidth(3.pt));
+label("$Y_C$", (0.5028302755564369,-0.2756785895296099), NE * labelscalefactor);
+dot(X_C,linewidth(3.pt));
+label("$X_C$", (-0.06340898032359123,-0.7582129119317282), NE * labelscalefactor);
+dot(Y_B,linewidth(3.pt));
+label("$Y_B$", (-0.7035055304488405,-0.580955405743195), NE * labelscalefactor);
+dot(X_B,linewidth(3.pt));
+label("$X_B$", (-0.6887340715997963,-0.18212601681899507), NE * labelscalefactor);
+dot(I,linewidth(3.pt));
+label("$I$", (-0.22589502766307756,-0.15258309912090617), NE * labelscalefactor);
+dot((-0.3941383007287072,-0.9190511410681597),linewidth(3.pt));
+label("$D'$", (-0.3736096161535197,-0.8911560415731282), NE * labelscalefactor);
+dot((-0.24766276556698932,0.9688463007885786),linewidth(3.pt));
+label("$A'$", (-0.22589502766307756,0.9995906911045603), NE * labelscalefactor);
+dot(P,linewidth(3.pt));
+label("$P$", (-0.5016289261785696,-0.28552622876230616), NE * labelscalefactor);
+dot(T_A,linewidth(3.pt));
+label("$T_A$", (-0.48193364771317726,-2.284596992999654), NE * labelscalefactor);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+/* end of picture */[/asy]
+
+Let $P=AD' \cap A'D$. It is obvious that $P$ is fixed (since in (1) we already proved that $(A',D')$ and $(A,D)$ are anti-homologous pairs) so $T_A$ is on the polar of $P$ wrt $\Omega$. $\blacksquare$
+

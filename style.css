@@ -1,0 +1,193 @@
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+.MathJax_CHTML {
+    -webkit-touch-callout: text !important;
+    -webkit-user-select: text !important;
+    -khtml-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+}
+
+
+html,
+body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* making the title */
+.title-section {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.title,
+.author-name,
+.author-email {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.title {
+    font-size: 2.5em;
+    margin-bottom: 0.25em;
+}
+
+.authors {
+    font-size: 1.2em;
+}
+
+.author-name {
+    font-style: italic;
+    margin-right: 0.5em;
+}
+
+.author-email {
+    color: #337ab7;
+    margin-right: 0.5em;
+}
+
+.separator {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+
+.page-break {
+    page-break-after: always;
+}
+
+/* Add page number to every page */
+.page-number {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5mm;
+}
+
+/* Add a margin at the bottom of the last page to make room for the page number */
+.last-page {
+    margin-bottom: 15mm;
+}
+
+/* making the definition box */
+.tcb-definition {
+    background-color: #f0fff0;
+    border-left: 3px solid darkgreen;
+    border-right: 3px solid darkgreen;
+    border-bottom: 3px solid darkgreen;
+    margin: 10px auto;
+    max-width: 800px;
+    /* Set your desired maximum width */
+    padding: 10px;
+    /* Add the border-radius property to round the corners */
+}
+
+.tcb-definition-title {
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-left: -12px;
+    margin-right: -13px;
+    margin-bottom: 10px;
+    padding: 5px;
+
+    /* Set the top corners to be rounded */
+}
+
+.tcb-definition-content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* making the theorem box */
+
+.tcb-theorem {
+    background-color: #f0feff;
+    border-left: 3px solid darkblue;
+    border-right: 3px solid darkblue;
+    border-bottom: 3px solid darkblue;
+    margin: 10px auto;
+    max-width: 800px;
+    /* Set your desired maximum width */
+    padding: 10px;
+    /* Add the border-radius property to round the corners */
+}
+
+.tcb-theorem-title {
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-left: -12px;
+    margin-right: -13px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.tcb-theorem-content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* making the theorem box */
+
+.tcb-example {
+    background-color: #f0feff;
+    border-left: 3px solid darkorange;
+    border-right: 3px solid darkorange;
+    border-bottom: 3px solid darkorange;
+    margin: 10px auto;
+    max-width: 800px;
+    /* Set your desired maximum width */
+    padding: 10px;
+    /* Add the border-radius property to round the corners */
+}
+
+.tcb-example-title {
+    background-color: darkorange;
+    color: white;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-left: -12px;
+    margin-right: -13px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.tcb-example-content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.perpart {
+    font-family: 'B Nazanin', sans-serif;
+    direction: rtl;
+}
+
+.engpart {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    direction: ltr;
+}
+
+
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.math {
+    direction: ltr;
+}
